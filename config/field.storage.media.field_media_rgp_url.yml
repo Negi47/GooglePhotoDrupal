@@ -1,0 +1,19 @@
+uuid: 614b9c85-153c-4a7e-b3a7-6eecc329f8ff
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+    - media_entity_remote_google_photos
+id: media.field_media_rgp_url
+field_name: field_media_rgp_url
+entity_type: media
+type: rgp_url
+settings: {  }
+module: media_entity_remote_google_photos
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,23 @@
+uuid: d0430ec8-64cd-4b4b-98f8-40ea46c22ba9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_media_rgp_url
+    - media.type.google_photo
+  module:
+    - media_entity_remote_google_photos
+id: media.google_photo.field_media_rgp_url
+field_name: field_media_rgp_url
+entity_type: media
+bundle: google_photo
+label: 'Google Photos image Url'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 1
+  link_type: 17
+field_type: rgp_url

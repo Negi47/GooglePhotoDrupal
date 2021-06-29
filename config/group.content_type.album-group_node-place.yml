@@ -1,0 +1,19 @@
+uuid: 65f88de6-96b4-4bac-ab03-d4300b4cc31e
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.album
+    - node.type.place
+  module:
+    - gnode
+    - node
+id: album-group_node-place
+label: 'Album: Group node (Place)'
+description: 'Adds <em class="placeholder">Place</em> content to groups both publicly and privately.'
+group_type: album
+content_plugin: 'group_node:place'
+plugin_config:
+  group_cardinality: 0
+  entity_cardinality: 1
+  use_creation_wizard: false

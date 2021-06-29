@@ -1,0 +1,84 @@
+uuid: a37fc9f6-9c84-4a9f-9a3f-7d928fb5cc3b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.user.user.field_company
+    - field.field.user.user.field_department_division
+    - field.field.user.user.field_first_name
+    - field.field.user.user.field_google_photo_api_client
+    - field.field.user.user.field_last_name
+    - field.field.user.user.field_line_of_business
+    - field.field.user.user.field_sub_line_of_business
+  module:
+    - google_photos_importer
+    - user
+_core:
+  default_config_hash: V51QPCKkgNREKtSmB9Iu2wmAMEpktVpnzklWaZV8UYo
+id: user.user.default
+targetEntityType: user
+bundle: user
+mode: default
+content:
+  field_company:
+    weight: 5
+    label: inline
+    settings:
+      link: false
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_department_division:
+    weight: 2
+    label: inline
+    settings:
+      link: false
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_first_name:
+    weight: 0
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_google_photo_api_client:
+    type: google_photo_api_client
+    weight: 7
+    region: content
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+  field_last_name:
+    weight: 1
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_line_of_business:
+    weight: 3
+    label: inline
+    settings:
+      link: false
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_sub_line_of_business:
+    weight: 4
+    label: inline
+    settings:
+      link: false
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  google_photos_importer_holder:
+    weight: 6
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  member_for: true

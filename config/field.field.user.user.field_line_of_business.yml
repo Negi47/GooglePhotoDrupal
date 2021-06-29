@@ -1,0 +1,30 @@
+uuid: aaf56e68-3935-47e2-939e-495c1c471b5b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_line_of_business
+    - taxonomy.vocabulary.line_of_business
+  module:
+    - user
+id: user.user.field_line_of_business
+field_name: field_line_of_business
+entity_type: user
+bundle: user
+label: 'Line Of business'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      line_of_business: line_of_business
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

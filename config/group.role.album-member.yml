@@ -1,0 +1,14 @@
+uuid: 1121e1f8-cf04-45db-a135-e90bb3025e5a
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.album
+id: album-member
+label: Member
+weight: -100
+internal: true
+audience: member
+group_type: album
+permissions_ui: true
+permissions: {  }

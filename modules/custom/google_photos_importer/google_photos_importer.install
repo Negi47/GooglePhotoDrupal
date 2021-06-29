@@ -1,0 +1,8 @@
+<?php
+
+/**
+ * Implements hook_update_N().
+ */
+function google_photos_importer_update_8001() {
+  drupal_install_schema('google_photos_importer');
+}

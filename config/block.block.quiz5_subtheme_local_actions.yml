@@ -1,0 +1,20 @@
+uuid: 262fc236-3ac5-40ef-af2c-4c157a71d144
+langcode: en
+status: true
+dependencies:
+  theme:
+    - quiz5_subtheme
+_core:
+  default_config_hash: 13GQpeITIJsp1kyPniXtWZfyFH87vb1xxJCHifL4UeE
+id: quiz5_subtheme_local_actions
+theme: quiz5_subtheme
+region: content
+weight: -20
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  provider: core
+  label_display: '0'
+visibility: {  }

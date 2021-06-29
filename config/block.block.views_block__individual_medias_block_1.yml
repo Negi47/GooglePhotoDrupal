@@ -1,0 +1,33 @@
+uuid: fed44cdc-2669-4c3f-9f69-5a33140cb0f2
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.individual_medias
+  module:
+    - ctools
+    - views
+  theme:
+    - bartik
+id: views_block__individual_medias_block_1
+theme: bartik
+region: sidebar_first
+weight: 0
+provider: null
+plugin: 'views_block:individual_medias-block_1'
+settings:
+  id: 'views_block:individual_medias-block_1'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+  items_per_page: none
+  context_mapping: {  }
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    bundles:
+      individual: individual
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'

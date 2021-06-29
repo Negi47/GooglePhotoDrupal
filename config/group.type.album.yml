@@ -1,0 +1,10 @@
+uuid: c7ac5e28-b908-4414-ad22-0e83dc37e89f
+langcode: en
+status: true
+dependencies: {  }
+id: album
+label: Album
+description: ''
+creator_membership: false
+creator_wizard: true
+creator_roles: {  }

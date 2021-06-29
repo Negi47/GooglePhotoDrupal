@@ -1,0 +1,27 @@
+Index: modules/contrib/google_api_client/src/Plugin/EntityReferenceSelection/GoogleApiClientSelection.php
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/modules/contrib/google_api_client/src/Plugin/EntityReferenceSelection/GoogleApiClientSelection.php b/modules/contrib/google_api_client/src/Plugin/EntityReferenceSelection/GoogleApiClientSelection.php
+--- a/modules/contrib/google_api_client/src/Plugin/EntityReferenceSelection/GoogleApiClientSelection.php	(date 1611299519977)
++++ b/modules/contrib/google_api_client/src/Plugin/EntityReferenceSelection/GoogleApiClientSelection.php	(date 1611299519977)
+@@ -22,18 +22,6 @@
+    */
+   protected function buildEntityQuery($match = NULL, $match_operator = 'CONTAINS') {
+     $query = parent::buildEntityQuery($match, $match_operator);
+-    $configuration = $this->getConfiguration();
+-    if (is_array($configuration['property']) && !empty($configuration['property'])) {
+-      $fields = array_keys($configuration['property']);
+-      foreach ($fields as $field) {
+-        if (is_array($configuration['property'][$field])) {
+-          $query->condition($field, $configuration['property'][$field], 'IN');
+-        }
+-        else {
+-          $query->condition($field, $configuration['property'][$field]);
+-        }
+-      }
+-    }
+     return $query;
+   }
+ 

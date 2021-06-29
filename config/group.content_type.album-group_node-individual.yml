@@ -1,0 +1,19 @@
+uuid: 8c8a61c6-6128-468b-8d53-9cd52d97f7ff
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.album
+    - node.type.individual
+  module:
+    - gnode
+    - node
+id: album-group_node-individual
+label: 'Album: Group node (Individual)'
+description: 'Adds <em class="placeholder">Individual</em> content to groups both publicly and privately.'
+group_type: album
+content_plugin: 'group_node:individual'
+plugin_config:
+  group_cardinality: 0
+  entity_cardinality: 1
+  use_creation_wizard: false

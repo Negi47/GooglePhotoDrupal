@@ -1,0 +1,10 @@
+uuid: b1cbb5a2-f3b6-4ee5-be54-f56d7f44655a
+langcode: en
+status: true
+dependencies:
+  module:
+    - user
+id: user.google_photo_import
+label: 'Google Photo Import'
+targetEntityType: user
+cache: true

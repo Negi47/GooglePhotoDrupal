@@ -1,0 +1,39 @@
+Index: modules/contrib/fillpdf/src/Form/FillPdfFormFieldForm.php
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/modules/contrib/fillpdf/src/Form/FillPdfFormFieldForm.php b/modules/contrib/fillpdf/src/Form/FillPdfFormFieldForm.php
+--- a/modules/contrib/fillpdf/src/Form/FillPdfFormFieldForm.php	(date 1607689135431)
++++ b/modules/contrib/fillpdf/src/Form/FillPdfFormFieldForm.php	(date 1607689135431)
+@@ -20,27 +20,13 @@
+    */
+   protected $adminFormHelper;
+ 
+-  /**
+-   * Constructs a FillPdfFormFieldForm object.
+-   *
+-   * @param \Drupal\Core\Entity\EntityRepositoryInterface $entity_repository
+-   *   The entity repository service.
+-   * @param \Drupal\fillpdf\FillPdfAdminFormHelperInterface $admin_form_helper
+-   *   FillPdf admin form helper service.
+-   */
+-  public function __construct(EntityRepositoryInterface $entity_repository, FillPdfAdminFormHelperInterface $admin_form_helper) {
+-    parent::__construct($entity_repository);
+-    $this->adminFormHelper = $admin_form_helper;
+-  }
+-
+   /**
+    * {@inheritdoc}
+    */
+   public static function create(ContainerInterface $container) {
+-    return new static(
+-      $container->get('entity.repository'),
+-      $container->get('fillpdf.admin_form_helper')
+-    );
++    $instance =  parent::create($container);
++    $instance->adminFormHelper = $container->get('fillpdf.admin_form_helper');
++    return $instance;
+   }
+ 
+   /**

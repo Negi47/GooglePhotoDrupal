@@ -1,0 +1,138 @@
+<?php
+
+/**
+ * @file
+ * Hooks specific to the Google photos importer module.
+ */
+
+use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Url;
+use Drupal\group\Entity\Group;
+use Drupal\node\NodeInterface;
+
+/**
+ * Implements hook_entity_extra_field_info().
+ */
+function google_photos_importer_entity_extra_field_info() {
+  $extra = [];
+  $google_photos_importer_holder = [
+    'label' => t('Google photos importer holder'),
+    'description' => t('Holds the link to google_photos_importer.google_photos_importer_controller.'),
+    'weight' => 100,
+    'visible' => TRUE,
+  ];
+
+  $extra['user']['user']['display']['google_photos_importer_holder'] = $google_photos_importer_holder;
+  $extra['node']['event']['display']['google_photos_importer_holder'] = $google_photos_importer_holder;
+  $extra['node']['story']['display']['google_photos_importer_holder'] = $google_photos_importer_holder;
+  $extra['node']['individual']['display']['google_photos_importer_holder'] = $google_photos_importer_holder;
+  $extra['node']['place']['display']['google_photos_importer_holder'] = $google_photos_importer_holder;
+  $extra['group']['album']['display']['google_photos_importer_holder'] = $google_photos_importer_holder;
+  $extra['group']['closed_album']['display']['google_photos_importer_holder'] = $google_photos_importer_holder;
+
+  return $extra;
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_view().
+ */
+function google_photos_importer_user_view(array &$build, EntityInterface $entity, EntityViewDisplayInterface $display, $view_mode) {
+  if ($display->getComponent('google_photos_importer_holder') && $entity->hasField('field_google_photo_api_client')) {
+    /** @var \Drupal\Core\Field\EntityReferenceFieldItemList $google_photo_api_client */
+    $google_photo_api_client = $entity->get('field_google_photo_api_client');
+    if ($google_photo_api_client->isEmpty()) {
+      $build['google_photos_importer_holder'] = \Drupal::service('google_photo_connection_link_builder')
+        ->getLink('Import Google photos');
+    }
+  }
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_view().
+ */
+function google_photos_importer_node_view(array &$build, EntityInterface $entity, EntityViewDisplayInterface $display, $view_mode) {
+  if ($display->getComponent('google_photos_importer_holder')) {
+    $node = \Drupal::routeMatch()->getParameter('node');
+    if ($node instanceof NodeInterface) {
+      $build['google_photos_importer_holder'] = \Drupal::service('google_photo_connection_link_builder')
+        ->getImportTypes('Import Google photos', $node);
+    }
+  }
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_view().
+ */
+function google_photos_importer_group_view(array &$build, EntityInterface $entity, EntityViewDisplayInterface $display, $view_mode) {
+  if ($display->getComponent('google_photos_importer_holder')) {
+    $group = \Drupal::routeMatch()->getParameter('group');
+    if ($group instanceof Group) {
+      $build['google_photos_importer_holder'] = \Drupal::service('google_photo_connection_link_builder')
+        ->getImportTypes('Import Google photos', $group);
+    }
+  }
+}
+
+/**
+ * Implements hook_entity_type_alter().
+ */
+function google_photos_importer_entity_type_alter(array &$entity_types) {
+  /** @var $entity_types \Drupal\Core\Entity\EntityTypeInterface[] */
+  if (isset($entity_types['google_api_client'])) {
+    $entity_types['google_api_client']->setClass('Drupal\google_photos_importer\Entity\GoogleApiClient');
+  }
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function google_photos_importer_preprocess_views_mini_pager__photo_importer(&$variables) {
+  //  $variables['items']['current'] = FALSE;
+
+  // Fix the previous link token generation.
+  if (!empty($variables['items']['previous']['href'])) {
+    $url = Url::fromUserInput($variables['items']['previous']['href']);
+    $query = $url->getOption('query');
+    $previous_link_query = $query;
+    $previous_link_query['next_page_token'] = NULL;
+    if (isset($previous_link_query['prev_page_token'])) {
+      $previous_link_query['next_page_token'] = $previous_link_query['prev_page_token'];
+      unset($previous_link_query['prev_page_token']);
+    }
+
+    $variables['items']['previous']['href'] = $url->setOption('query', $previous_link_query)
+      ->toString();
+  }
+}
+
+/**
+ * Helper function to set the default values on date select.
+ */
+function _google_photos_importer_date_date_callbacks(array &$element, FormStateInterface $form_state, $date = NULL) {
+  // Some hacks we need to unset the day/mo if date filter selected.
+  $filters = \Drupal::requestStack()->getCurrentRequest()->query->all();
+  if (!empty($filters['datelist'])) {
+    $element['year']['#value'] = $filters['datelist']['year'];
+    $element['month']['#value'] = $filters['datelist']['month'];
+    $element['day']['#value'] = $filters['datelist']['day'];;
+  }
+}
+
+/**
+ * Implements hook_mail().
+ */
+function google_photos_importer_mail($key, &$message, $params) {
+  $options = [
+    'langcode' => $message['langcode'],
+  ];
+
+  switch ($key) {
+    case 'import_photos':
+      $message['from'] = \Drupal::config('system.site')->get('mail');
+      $message['subject'] = t('Import photos', [], $options);
+      $message['body'][] = $params['message'];
+      break;
+  }
+}

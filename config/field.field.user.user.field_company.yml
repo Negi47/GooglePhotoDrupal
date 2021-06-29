@@ -1,0 +1,28 @@
+uuid: 24b55945-d57d-4c50-bb8f-c0b99cf267ae
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_company
+  module:
+    - user
+id: user.user.field_company
+field_name: field_company
+entity_type: user
+bundle: user
+label: Company
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:group'
+  handler_settings:
+    target_bundles: {  }
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

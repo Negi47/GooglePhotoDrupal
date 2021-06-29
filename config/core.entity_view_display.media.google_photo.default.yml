@@ -1,0 +1,108 @@
+uuid: 41d3a7a7-2688-49b2-8b8f-af85c2b57314
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.media.google_photo.field_end_date
+    - field.field.media.google_photo.field_event
+    - field.field.media.google_photo.field_image
+    - field.field.media.google_photo.field_individual
+    - field.field.media.google_photo.field_media_description
+    - field.field.media.google_photo.field_media_height
+    - field.field.media.google_photo.field_media_rgp_id
+    - field.field.media.google_photo.field_media_rgp_product_url
+    - field.field.media.google_photo.field_media_rgp_url
+    - field.field.media.google_photo.field_media_width
+    - field.field.media.google_photo.field_mime_type
+    - field.field.media.google_photo.field_place
+    - field.field.media.google_photo.field_start_date
+    - field.field.media.google_photo.field_story
+    - media.type.google_photo
+  module:
+    - datetime
+    - google_photos_importer
+id: media.google_photo.default
+targetEntityType: media
+bundle: google_photo
+mode: default
+content:
+  field_end_date:
+    weight: 4
+    label: above
+    settings:
+      format_type: medium
+      timezone_override: ''
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_event:
+    weight: 1
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_individual:
+    weight: 6
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_media_rgp_product_url:
+    weight: 2
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_media_rgp_url:
+    label: visually_hidden
+    weight: 0
+    settings:
+      image_style_remote: '500_300'
+      image_style_local: thumbnail
+      fallback_field: field_media_image
+    third_party_settings: {  }
+    type: rgp_url_img_formatter
+    region: content
+  field_place:
+    weight: 7
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_start_date:
+    weight: 3
+    label: above
+    settings:
+      format_type: medium
+      timezone_override: ''
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_story:
+    weight: 5
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+hidden:
+  created: true
+  field_image: true
+  field_media_description: true
+  field_media_height: true
+  field_media_image: true
+  field_media_rgp_id: true
+  field_media_width: true
+  field_mime_type: true
+  name: true
+  thumbnail: true
+  uid: true

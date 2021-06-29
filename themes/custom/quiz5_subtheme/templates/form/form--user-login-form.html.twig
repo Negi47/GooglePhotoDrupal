@@ -1,0 +1,43 @@
+{#
+/**
+ * @file
+ * Theme override for a 'form' element.
+ *
+ * Available variables
+ * - attributes: A list of HTML attributes for the wrapper element.
+ * - form: The form.
+ *
+ * @see template_preprocess_form()
+ */
+#}
+{{ attach_library('bootstrap_barrio/form') }}
+<form{{ attributes }}>
+  <div class="container-fluid border-secondary">
+    <div class="row justify-content-md-center">
+      <div class="col-md-3 bg-light border-secondary border">
+        <div class="label mb-2 mt-2">{{ 'Login'|t }}</div>
+        {{ form.name }}
+        {{ form.pass }}
+        <div>
+          <div class="float-right">{{ form.actions }}</div>
+          <div class="float-left">{{ form.forgot_pass }}</div>
+        </div>
+      </div>
+      <div class="col-md-3 border-secondary border border-left-0">
+        <div class="mt-4 pt-4">
+          <div class="label">{{ 'Not registered yet?'|t }}</div>
+          <div class="description">
+            {% trans %}
+              It takes just a few minutes to register.
+            {% endtrans %}
+          </div>
+          <div class="user-register float-right mt-4 pt-2">
+            {{ form.register }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  {{ form.form_id }}
+  {{ form.form_build_id }}
+</form>

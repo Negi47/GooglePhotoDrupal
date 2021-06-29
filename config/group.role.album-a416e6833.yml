@@ -1,0 +1,17 @@
+uuid: 533dd868-6845-4492-afb1-ecd6e240f151
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.album
+  enforced:
+    config:
+      - user.role.administrator
+id: album-a416e6833
+label: Administrator
+weight: 2
+internal: true
+audience: outsider
+group_type: album
+permissions_ui: false
+permissions: {  }

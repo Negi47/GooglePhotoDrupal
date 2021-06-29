@@ -1,0 +1,17 @@
+Index: modules/contrib/quiz/src/View/QuizViewBuilder.php
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/modules/contrib/quiz/src/View/QuizViewBuilder.php b/modules/contrib/quiz/src/View/QuizViewBuilder.php
+--- a/modules/contrib/quiz/src/View/QuizViewBuilder.php	(date 1609328822310)
++++ b/modules/contrib/quiz/src/View/QuizViewBuilder.php	(date 1609328822310)
+@@ -96,6 +96,8 @@
+           'class' => [
+             'quiz-start-link',
+             'button',
++            'btn',
++            'btn-primary',
+           ],
+         ],
+       ]);

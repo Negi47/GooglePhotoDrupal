@@ -1,0 +1,25 @@
+uuid: 315923f0-06ad-4e6b-9398-660206c94965
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:e2033f84-6bc4-48cf-82e1-6cfcf574a75d'
+  module:
+    - block_content
+  theme:
+    - quiz5_subtheme
+id: copyright
+theme: quiz5_subtheme
+region: footer_fifth
+weight: -6
+provider: null
+plugin: 'block_content:e2033f84-6bc4-48cf-82e1-6cfcf574a75d'
+settings:
+  id: 'block_content:e2033f84-6bc4-48cf-82e1-6cfcf574a75d'
+  label: Copyright
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

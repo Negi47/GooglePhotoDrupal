@@ -1,0 +1,29 @@
+uuid: 93212f6e-517b-42a1-a46d-cebd082cdad2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_story
+    - media.type.google_photo
+    - node.type.story
+id: media.google_photo.field_story
+field_name: field_story
+entity_type: media
+bundle: google_photo
+label: Story
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      story: story
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

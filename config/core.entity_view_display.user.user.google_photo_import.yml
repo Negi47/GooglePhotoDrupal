@@ -1,0 +1,43 @@
+uuid: 3569083e-dbe9-4288-9c8a-1690613e491a
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.user.google_photo_import
+    - field.field.user.user.field_company
+    - field.field.user.user.field_department_division
+    - field.field.user.user.field_first_name
+    - field.field.user.user.field_google_photo_api_client
+    - field.field.user.user.field_last_name
+    - field.field.user.user.field_line_of_business
+    - field.field.user.user.field_sub_line_of_business
+  module:
+    - google_photos_importer
+    - user
+_core:
+  default_config_hash: V51QPCKkgNREKtSmB9Iu2wmAMEpktVpnzklWaZV8UYo
+id: user.user.google_photo_import
+targetEntityType: user
+bundle: user
+mode: google_photo_import
+content:
+  field_google_photo_api_client:
+    type: google_photo_api_client
+    weight: 1
+    region: content
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+  google_photos_importer_holder:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_company: true
+  field_department_division: true
+  field_first_name: true
+  field_last_name: true
+  field_line_of_business: true
+  field_sub_line_of_business: true
+  member_for: true

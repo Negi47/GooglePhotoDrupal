@@ -1,0 +1,19 @@
+uuid: cff37679-ad94-480e-ac8d-d1cf4a307a4a
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.album
+    - node.type.event
+  module:
+    - gnode
+    - node
+id: album-group_node-event
+label: 'Album: Group node (Event)'
+description: 'Adds <em class="placeholder">Event</em> content to groups both publicly and privately.'
+group_type: album
+content_plugin: 'group_node:event'
+plugin_config:
+  group_cardinality: 0
+  entity_cardinality: 1
+  use_creation_wizard: false

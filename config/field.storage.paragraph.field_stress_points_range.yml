@@ -1,0 +1,19 @@
+uuid: d8860cbc-b967-4b70-93f8-6604154cb72d
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+    - range
+id: paragraph.field_stress_points_range
+field_name: field_stress_points_range
+entity_type: paragraph
+type: range_float
+settings: {  }
+module: range
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

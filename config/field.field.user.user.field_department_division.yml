@@ -1,0 +1,30 @@
+uuid: 738eeb3e-0007-41dc-8663-d6efb9861ea9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_department_division
+    - taxonomy.vocabulary.department_division
+  module:
+    - user
+id: user.user.field_department_division
+field_name: field_department_division
+entity_type: user
+bundle: user
+label: 'Department (Division)'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      department_division: department_division
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

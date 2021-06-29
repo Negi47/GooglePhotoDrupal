@@ -1,0 +1,13 @@
+field.formatter.settings.rgp_url_img_formatter:
+  type: mapping
+  label: 'Formatter for google image field'
+  mapping:
+    image_style_remote:
+      type: string
+      label: 'Remote image style'
+    image_style_local:
+      type: string
+      label: 'Local image style'
+    fallback_field:
+      type: string
+      label: 'Local fallback field'

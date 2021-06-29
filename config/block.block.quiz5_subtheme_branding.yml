@@ -1,0 +1,25 @@
+uuid: ef4170a0-ce92-4bde-bf9b-f3dac99d9b6f
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - quiz5_subtheme
+_core:
+  default_config_hash: NDwadleLD3YVSbDUaakxyYZyINYtkFtOVGShfq4kWy8
+id: quiz5_subtheme_branding
+theme: quiz5_subtheme
+region: header
+weight: -5
+provider: null
+plugin: system_branding_block
+settings:
+  id: system_branding_block
+  label: 'Site branding'
+  provider: system
+  label_display: '0'
+  use_site_logo: true
+  use_site_name: false
+  use_site_slogan: true
+visibility: {  }

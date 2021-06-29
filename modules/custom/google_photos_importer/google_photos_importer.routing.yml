@@ -1,0 +1,53 @@
+google_photos_importer.import_type:
+  path: '/google-photo-import-type/{entity_type_id}/{entity_id}'
+  defaults:
+    _controller: '\Drupal\google_photos_importer\Controller\GooglePhotosImporterController::importType'
+    _title: 'Google photo connector'
+  requirements:
+    _custom_access: '\Drupal\google_photos_importer\Controller\GooglePhotosImporterController::usersAreEqual'
+  options:
+    no_cache: TRUE
+
+google_photos_importer.google_photos_importer_controller:
+  path: '/google-photo-connector/{user}'
+  defaults:
+    _controller: '\Drupal\google_photos_importer\Controller\GooglePhotosImporterController::photosSelection'
+    _title: 'Google photo connector'
+  requirements:
+    _custom_access: '\Drupal\google_photos_importer\Controller\GooglePhotosImporterController::usersAreEqual'
+  options:
+    no_cache: TRUE
+
+google_photos_importer.google_albums_importer_form:
+  path: '/google-photos-importer/form/google-albums-importer/{data}'
+  defaults:
+    _form: '\Drupal\google_photos_importer\Form\GoogleAlbumsImporterForm'
+    _title: 'Import Albums'
+  requirements:
+    _custom_access: '\Drupal\google_photos_importer\Controller\GooglePhotosImporterController::usersAreEqual'
+
+google_photos_importer.google_photos_importer_form:
+  path: '/google-photos-importer/form/google-photos-importer/{data}'
+  defaults:
+    _form: '\Drupal\google_photos_importer\Form\GooglePhotosImporterForm'
+    _title: 'Import Photos'
+  requirements:
+    _custom_access: '\Drupal\google_photos_importer\Controller\GooglePhotosImporterController::usersAreEqual'
+
+entity.google_api_client.revoke_non_admin_form:
+  path: '/google_api_client/{google_api_client}/revoke'
+  defaults:
+    _title: 'Google Account Token Revoke'
+    _entity_form: 'google_api_client.revoke_non_admin'
+  requirements:
+    _permission: 'use google api client'
+
+google_photos_importer.queue.run:
+  path: '/google-photos-importer/queue-run'
+  defaults:
+    _controller: '\Drupal\google_photos_importer\Controller\GooglePhotosImporterController::queueRun'
+    _title: 'Queue run'
+  requirements:
+    _custom_access: '\Drupal\google_photos_importer\Controller\GooglePhotosImporterController::queueRunAccess'
+  options:
+    no_cache: TRUE

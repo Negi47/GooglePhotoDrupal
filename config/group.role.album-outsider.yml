@@ -1,0 +1,14 @@
+uuid: de4754e9-3826-44e2-b0b3-07ac09db30ad
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.album
+id: album-outsider
+label: Outsider
+weight: -101
+internal: true
+audience: outsider
+group_type: album
+permissions_ui: true
+permissions: {  }

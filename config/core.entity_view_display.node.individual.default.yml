@@ -1,0 +1,33 @@
+uuid: 8f0f1461-f3bd-43da-a54c-bdcc0b676c09
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.individual.body
+    - node.type.individual
+  module:
+    - text
+    - user
+id: node.individual.default
+targetEntityType: node
+bundle: individual
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 101
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  google_photos_importer_holder:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden: {  }

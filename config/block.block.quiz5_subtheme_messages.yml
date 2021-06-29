@@ -1,0 +1,22 @@
+uuid: 951bbff0-7bfc-424b-a5d0-d50f2fe7a9dc
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - quiz5_subtheme
+_core:
+  default_config_hash: KHQIJ7Vfl25lTjzIc7qIvnuistt-Mw2O0kG4jCofmkI
+id: quiz5_subtheme_messages
+theme: quiz5_subtheme
+region: highlighted
+weight: 0
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: 'Status messages'
+  provider: system
+  label_display: '0'
+visibility: {  }

@@ -1,0 +1,9 @@
+{% set progress = (100/total) * (current) %}
+<div class="pl-4 mb-2 inline-block">
+  {{ "Your Progress:"|t }}
+</div>
+<div class="pl-4 mb-2 inline-block">
+  <div class="progress">
+    <div class="progress-bar" role="progressbar" style="width: {{ progress }}%;" aria-valuenow="{{ progress }}" aria-valuemin="0" aria-valuemax="100"><span >{{ "Qestion"| t  }} {{ current }} of {{ total }}</span></div>
+  </div>
+</div>

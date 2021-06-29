@@ -1,0 +1,21 @@
+uuid: bd7e2a43-c7cd-4144-a446-ff6e738892fe
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_end_date
+    - media.type.google_photo
+  module:
+    - datetime
+id: media.google_photo.field_end_date
+field_name: field_end_date
+entity_type: media
+bundle: google_photo
+label: 'End Date'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

@@ -1,0 +1,6 @@
+authtoken: 37jFgP3Fju9QUzbNRGX71_2T8y1NAYHQkdwgWpx7zAx
+tunnels:
+  site1:
+    addr: google-photos-importer_web_1.google-photos-importer_default:80
+    proto: http
+    hostname: gpi.ngrok.io

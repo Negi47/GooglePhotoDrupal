@@ -1,0 +1,36 @@
+.image-container {
+  display: inline-block;
+  position: relative;
+  width: 30%;
+  height: 200px;
+  margin-right: 1.5%;
+  margin-left: 1.5%;
+  -ms-flex: 0 0 30%;
+  flex: 0 0 30%;
+  max-width: 30%;
+  overflow: hidden;
+}
+
+.image-container img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.image-container .image-title {
+  background-color: #eeeeee;
+  padding: 5px 0;
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+  width: 100%;
+  white-space: pre-line;
+  opacity: 0.5;
+}
+
+.image-container button {
+  position: absolute;
+  bottom: 2px;
+  right: 0;
+}

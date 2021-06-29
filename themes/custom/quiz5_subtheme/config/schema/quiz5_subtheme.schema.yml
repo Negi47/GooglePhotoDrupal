@@ -1,0 +1,5 @@
+# Schema for the configuration files of the Bootstrap Barrio Subtheme.
+
+quiz5_subtheme.settings:
+  type: quiz5_subtheme.settings
+  label: 'Quiz5 Bootstrap settings'

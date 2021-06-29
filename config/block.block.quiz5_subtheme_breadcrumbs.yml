@@ -1,0 +1,22 @@
+uuid: 8d21d673-908a-427d-84ce-114c74be5a03
+langcode: en
+status: false
+dependencies:
+  module:
+    - system
+  theme:
+    - quiz5_subtheme
+_core:
+  default_config_hash: oXUb3JZR2WW5VOdw4HrhRicCsq51mCgLfRyvheG68ck
+id: quiz5_subtheme_breadcrumbs
+theme: quiz5_subtheme
+region: breadcrumb
+weight: 0
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: Breadcrumbs
+  provider: system
+  label_display: '0'
+visibility: {  }

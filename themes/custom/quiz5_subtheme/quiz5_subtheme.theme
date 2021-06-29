@@ -1,0 +1,117 @@
+<?php
+
+/**
+ * @file
+ * Functions to support theming in the SASS Starterkit subtheme.
+ */
+
+use Drupal\Component\Serialization\Json;
+use Drupal\Component\Utility\Html;
+use Drupal\Core\Ajax\AjaxResponse;
+use Drupal\Core\Ajax\CloseDialogCommand;
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Url;
+
+/**
+ * Implements hook_form_system_theme_settings_alter() for settings form.
+ *
+ * Replace Barrio setting options with subtheme ones.
+ *
+ * Example on how to alter theme settings form
+ */
+function quiz5_subtheme_form_system_theme_settings_alter(&$form, FormStateInterface $form_state) {
+  $form['components']['navbar']['bootstrap_barrio_navbar_top_background']['#options'] = [
+    'bg-primary' => t('Primary'),
+    'bg-secondary' => t('Secondary'),
+    'bg-light' => t('Light'),
+    'bg-dark' => t('Dark'),
+    'bg-white' => t('White'),
+    'bg-transparent' => t('Transparent'),
+  ];
+  $form['components']['navbar']['bootstrap_barrio_navbar_background']['#options'] = [
+    'bg-primary' => t('Primary'),
+    'bg-secondary' => t('Secondary'),
+    'bg-light' => t('Light'),
+    'bg-dark' => t('Dark'),
+    'bg-white' => t('White'),
+    'bg-transparent' => t('Transparent'),
+  ];
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function quiz5_subtheme_form_quiz_question_answering_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  /* @var $quiz_result \Drupal\quiz\Entity\QuizResult */
+  $quiz_result = $form_state->getBuildInfo()['args'][1];
+
+  $quiz = \Drupal::entityTypeManager()
+    ->getStorage('quiz')
+    ->loadRevision($quiz_result->get('vid')->getString());
+
+  if ($quiz->isLastQuestion()) {
+    $form['navigation']['submit']['#value'] = t('Next');
+    $form['navigation']['submit_hidden']['#value'] = t('Next');
+  }
+}
+
+/**
+ * Implements template_theme_suggestions_alter().
+ */
+function quiz5_subtheme_theme_suggestions_alter(array &$suggestions, array $variables, $hook) {
+  if ($hook == 'form' & !empty($variables['element']['#id'])) {
+    $suggestions[] = $hook . '__' . str_replace('-', '_', $variables['element']['#id']);
+  }
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function quiz5_subtheme_form_user_login_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  \Drupal::service('page_cache_kill_switch')->trigger();
+  $form['#attached']['library'][] = 'core/drupal.dialog.ajax';
+  $form['name']['#title_display'] = 'invisible';
+  unset($form['name']['#description']);
+  $form['name']['#attributes']['placeholder'] = t('Enter Username');
+
+  $form['pass']['#title_display'] = 'invisible';
+  unset($form['pass']['#description']);
+  $form['pass']['#attributes']['placeholder'] = t('Enter Password');
+
+  $form['actions']['submit']['#attributes']['class'] = ['btn', 'btn-success'];
+
+  $form['forgot_pass'] = [
+    '#type' => 'link',
+    '#title' => t('Forgot Password?'),
+    '#url' => Url::fromRoute('user.pass'),
+  ];
+
+  $form['register'] = [
+    '#type' => 'link',
+    '#title' => t('Register'),
+    '#url' => Url::fromRoute('user.register'),
+    '#attributes' => [
+      'class' => [
+        'btn',
+        'btn-secondary',
+      ]
+    ],
+  ];
+}
+
+/**
+ * Implements template_preprocess_form().
+ */
+function quiz5_subtheme_preprocess_form(&$variables) {
+  if ($variables['element']['#form_id'] == 'user_login_form') {
+    $variables['form'] = $variables['element'];
+  }
+}
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function quiz5_subtheme_preprocess_menu_local_tasks(&$data, $route_name) {
+  if (isset($data['primary']['entity.quiz.take'])) {
+    unset($data['primary']['entity.quiz.take']);
+  }
+}

@@ -1,0 +1,14 @@
+# Created by .ignore support plugin (hsz.mobi)
+vendor/
+sites/default/settings.local.php
+*.sql
+!dump.sql
+*.sql.zip
+*.sql.tar.gz
+*.sql.gz2
+.idea
+modules/contrib/
+sites/default/files/
+core
+themes/contrib/
+.DS_Store

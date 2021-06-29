@@ -1,0 +1,22 @@
+uuid: b247ec56-d917-4dd5-9cf1-ad1f749a068c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.group_content.group_roles
+    - group.content_type.album-group_membership
+id: group_content.album-group_membership.group_roles
+field_name: group_roles
+entity_type: group_content
+bundle: album-group_membership
+label: Roles
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'group_type:group_role'
+  handler_settings:
+    group_type_id: album
+field_type: entity_reference

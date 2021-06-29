@@ -1,0 +1,6 @@
+/**
+ * @file
+ * Subtheme specific CSS.
+ */
+@import "temp-table-quiz.css";
+@import "quiz-feedback-table.css";

@@ -1,0 +1,33 @@
+.answering-form .field__label,
+.answering-form .responsive-enabled.table.table-hover.table-striped>thead>tr>th {
+  display: none;
+  visibility: hidden;
+}
+.answering-form .responsive-enabled.table.table-hover.table-striped>tbody>tr {
+  background: none;
+  border: none;
+}
+.answering-form .responsive-enabled.table.table-hover.table-striped>tbody>tr>td {
+  padding: 2px;
+  border: none;
+  background: none;
+}
+.answering-form .table-responsive>table>tbody>tr>td:first-child {
+  width: 20px;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.answering-form .table-responsive>table>tbody>tr>td:first-child>div {
+  padding-left: 60px;
+}
+.answering-form .responsive-enabled.table.table-hover.table-striped>tbody>tr>td>p {
+  margin-bottom: 2px;
+}
+.answering-form .table-responsive>table {
+  border: none;
+}
+.answering-form .clearfix.text-formatted.field.field--name-body.field--type-text-long.field--label-above .field__item>p {
+  margin-bottom: 2px;
+  padding-left: 2%;
+}
+

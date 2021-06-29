@@ -1,0 +1,6 @@
+revoke google api client access:
+  title: 'Revoke Google API client access'
+  description: 'Users with this permission will be able to access to the Google Account Token Revoke.'
+use google api client:
+  title: 'Use Google API client'
+  description: 'Users with this permission will be able to administer the Google API client.'

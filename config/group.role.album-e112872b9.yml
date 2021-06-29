@@ -1,0 +1,17 @@
+uuid: 6db8d99a-8c5d-4f18-8847-ab6bfd31c8cb
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.album
+  enforced:
+    config:
+      - user.role.group_admin
+id: album-e112872b9
+label: 'Group Admin'
+weight: 3
+internal: true
+audience: outsider
+group_type: album
+permissions_ui: false
+permissions: {  }

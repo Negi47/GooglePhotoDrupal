@@ -1,0 +1,29 @@
+uuid: 939a470f-32ff-4f02-9785-5c5a3a205682
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_individual
+    - media.type.google_photo
+    - node.type.individual
+id: media.google_photo.field_individual
+field_name: field_individual
+entity_type: media
+bundle: google_photo
+label: Individual
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      individual: individual
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

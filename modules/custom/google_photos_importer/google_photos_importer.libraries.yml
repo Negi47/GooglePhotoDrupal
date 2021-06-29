@@ -1,0 +1,35 @@
+# Photos.
+select_items:
+  js:
+    js/select-items.js: {}
+  dependencies:
+    - core/drupal
+    - core/jquery
+
+selection_bucket:
+  js:
+    js/selection-bucket.js: {}
+  dependencies:
+    - core/jquery
+    - core/jquery.once
+    - core/drupal
+    - core/drupal.dialog
+    - core/drupal.form
+    - core/drupalSettings
+
+selection_bucket_styles:
+  css:
+    theme:
+      css/selection-bucket.css: { }
+
+# Albums.
+selection_album_bucket:
+  js:
+    js/selection-album-bucket.js: {}
+  dependencies:
+    - core/jquery
+    - core/jquery.once
+    - core/drupal
+    - core/drupal.dialog
+    - core/drupal.form
+    - core/drupalSettings

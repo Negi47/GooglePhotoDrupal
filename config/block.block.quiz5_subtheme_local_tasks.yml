@@ -1,0 +1,22 @@
+uuid: 0c540add-5301-41e1-9420-6f357831457a
+langcode: en
+status: true
+dependencies:
+  theme:
+    - quiz5_subtheme
+_core:
+  default_config_hash: X9I1OB0W3WlWtrK-CNcg6hNWwa8wficanpH8pYnDZDE
+id: quiz5_subtheme_local_tasks
+theme: quiz5_subtheme
+region: content
+weight: -40
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: Tabs
+  provider: core
+  label_display: '0'
+  primary: true
+  secondary: true
+visibility: {  }

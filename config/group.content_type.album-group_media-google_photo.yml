@@ -1,0 +1,19 @@
+uuid: d5e46aa9-892e-492e-b4af-7151279dee87
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.album
+    - media.type.google_photo
+  module:
+    - groupmedia
+    - media
+id: album-group_media-google_photo
+label: 'Album: Group media (google_photo)'
+description: 'Adds <em class="placeholder">google_photo</em> content to groups both publicly and privately.'
+group_type: album
+content_plugin: 'group_media:google_photo'
+plugin_config:
+  group_cardinality: 1
+  entity_cardinality: 1
+  use_creation_wizard: false

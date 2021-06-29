@@ -1,0 +1,21 @@
+uuid: d483619d-3e17-4090-b295-daaa69d99abf
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_start_date
+    - media.type.google_photo
+  module:
+    - datetime
+id: media.google_photo.field_start_date
+field_name: field_start_date
+entity_type: media
+bundle: google_photo
+label: 'Start Date'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

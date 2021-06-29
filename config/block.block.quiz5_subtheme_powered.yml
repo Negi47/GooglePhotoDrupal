@@ -1,0 +1,22 @@
+uuid: 61cb49c5-c055-4258-b127-5388f04d3824
+langcode: en
+status: false
+dependencies:
+  module:
+    - system
+  theme:
+    - quiz5_subtheme
+_core:
+  default_config_hash: jQQUUWN2Uxr5qZtc9zcJKBCxpKY8orN1u2HPqYYRQDI
+id: quiz5_subtheme_powered
+theme: quiz5_subtheme
+region: footer_fifth
+weight: -5
+provider: null
+plugin: system_powered_by_block
+settings:
+  id: system_powered_by_block
+  label: '© 2019 AdvancingX'
+  provider: system
+  label_display: '0'
+visibility: {  }

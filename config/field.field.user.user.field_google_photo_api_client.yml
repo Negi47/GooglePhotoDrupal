@@ -1,0 +1,27 @@
+uuid: af6ca70f-cd07-44fa-bb4b-357acd1a78f3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_google_photo_api_client
+  module:
+    - user
+id: user.user.field_google_photo_api_client
+field_name: field_google_photo_api_client
+entity_type: user
+bundle: user
+label: 'Google Photo Connection'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:google_api_client'
+  handler_settings:
+    target_bundles: null
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+field_type: entity_reference

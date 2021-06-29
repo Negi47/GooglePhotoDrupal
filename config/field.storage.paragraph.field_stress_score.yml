@@ -1,0 +1,36 @@
+uuid: 7fbb8f58-c8ef-4bfd-ab81-438238a6b04c
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.field_stress_score
+field_name: field_stress_score
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: ++
+      label: ++
+    -
+      value: +
+      label: +
+    -
+      value: '~'
+      label: '~'
+    -
+      value: '-'
+      label: '-'
+    -
+      value: '--'
+      label: '--'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

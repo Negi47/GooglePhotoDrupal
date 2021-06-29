@@ -1,0 +1,29 @@
+uuid: 66399467-7903-4e55-8124-2636ebfac9a5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_place
+    - media.type.google_photo
+    - node.type.place
+id: media.google_photo.field_place
+field_name: field_place
+entity_type: media
+bundle: google_photo
+label: Place
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      place: place
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

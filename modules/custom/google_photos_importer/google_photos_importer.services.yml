@@ -1,0 +1,36 @@
+services:
+  google_photos_importer.client:
+    class: Drupal\google_photos_importer\Service\GooglePhotosClient
+    arguments:
+      - '@logger.factory'
+      - '@entity_type.manager'
+      - '@google_api_client.client'
+      - '@current_user'
+
+  google_photo_connection_link_builder:
+    class: Drupal\google_photos_importer\Service\GooglePhotoConnectionLinkBuilder
+    arguments:
+      - '@current_user'
+      - '@entity_type.manager'
+
+  google_photos_importer.route_subscriber:
+    class: Drupal\google_photos_importer\EventSubscriber\RouteSubscriber
+    tags:
+      - { name: event_subscriber }
+
+  logger.channel.google_photos_importer:
+    parent: logger.channel_base
+    arguments: ['google_photos_importer']
+  google_photos_importer.google_pager:
+    class: Drupal\google_photos_importer\GooglePager
+    arguments:
+      - '@tempstore.private'
+      - '@logger.channel.google_photos_importer'
+      - '@request_stack'
+      - '@pager.manager'
+
+  google_photos_importer.event_content_generator:
+    class: Drupal\google_photos_importer\Service\EventContentGenerator
+    arguments:
+      - '@current_user'
+      - '@entity_type.manager'

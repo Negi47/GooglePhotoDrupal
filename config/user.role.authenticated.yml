@@ -1,0 +1,35 @@
+uuid: 58815700-2cab-4e7d-b6d3-9505358bf987
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: btW6TFHajhy7Eo6YUvdFiPh4TcPggo8GBXYctjV6zag
+id: authenticated
+label: 'Authenticated user'
+weight: 1
+is_admin: false
+permissions:
+  - 'access comments'
+  - 'access content'
+  - 'access quiz'
+  - 'access shortcuts'
+  - 'access site-wide contact form'
+  - 'access user profiles'
+  - 'administer account settings'
+  - 'administer blocks'
+  - 'administer permissions'
+  - 'administer users'
+  - 'cancel account'
+  - 'change own username'
+  - 'export configuration'
+  - 'post comments'
+  - 'publish own pdfs'
+  - 'search content'
+  - 'select account cancellation method'
+  - 'skip comment approval'
+  - 'use admin toolbar search'
+  - 'use text format basic_html'
+  - 'view any quiz'
+  - 'view media'
+  - 'view own quiz'
+  - 'view own quiz_result'

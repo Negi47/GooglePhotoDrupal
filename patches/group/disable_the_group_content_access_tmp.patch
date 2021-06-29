@@ -1,0 +1,16 @@
+Index: modules/contrib/group/group.module
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/modules/contrib/group/group.module b/modules/contrib/group/group.module
+--- a/modules/contrib/group/group.module	(date 1609242451789)
++++ b/modules/contrib/group/group.module	(date 1609242451789)
+@@ -255,6 +255,7 @@
+  * Implements hook_query_TAG_alter().
+  */
+ function group_query_views_entity_query_alter(SelectInterface $query) {
++  return;
+   $entity_type_id = $query->getMetaData('entity_type');
+   $query->addTag($entity_type_id . '_access');
+   group_query_entity_query_alter($query);

@@ -1,0 +1,19 @@
+uuid: 3af9e457-873b-48f5-a3b5-9603d3178bf0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_media_rgp_id
+    - media.type.google_photo
+id: media.google_photo.field_media_rgp_id
+field_name: field_media_rgp_id
+entity_type: media
+bundle: google_photo
+label: 'Google Photos image ID'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
